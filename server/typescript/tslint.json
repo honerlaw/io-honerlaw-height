@@ -1,0 +1,16 @@
+{
+  "extends": "tslint:latest",
+  "rules": {
+    "object-literal-sort-keys": false,
+    "no-console": {
+      "allow": ["log", "warn"]
+    },
+    "trailing-comma": "never",
+    "ordered-imports": false,
+    "member-ordering": [true, {
+      "order" : ["static-field", "private-static-method", "public-static-method", "instance-field", "constructor",
+        "private-instance-method", "public-instance-method"]
+    }],
+    "no-empty-interface": false
+  }
+}

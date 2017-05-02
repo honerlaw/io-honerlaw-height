@@ -1,0 +1,5 @@
+node_modules/
+bin/
+typescript/src/routes.ts
+swagger/
+typescript/**/*.js

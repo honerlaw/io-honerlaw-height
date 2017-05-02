@@ -1,0 +1,53 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "@types/bcrypt": "^1.0.0",
+    "@types/body-parser": "0.0.34",
+    "@types/express": "^4.0.35",
+    "@types/inversify-binding-decorators": "^2.0.0",
+    "@types/jsonwebtoken": "^7.2.0",
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "inversify": "^3.1.0",
+    "inversify-binding-decorators": "^3.0.0",
+    "inversify-inject-decorators": "^3.0.1",
+    "jsonwebtoken": "^7.3.0",
+    "pg": "^6.1.2",
+    "reflect-metadata": "^0.1.10",
+    "tsoa": "^1.1.1",
+    "typeorm": "0.0.9"
+  },
+  "devDependencies": {
+    "@types/chai": "^3.4.35",
+    "@types/mocha": "^2.2.39",
+    "@types/request": "0.0.40",
+    "@types/sinon": "^1.16.35",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "request": "^2.79.0",
+    "sinon": "^1.17.7",
+    "ts-node": "^2.1.0",
+    "tslint": "^4.5.1",
+    "typemoq": "^1.2.1",
+    "typescript": "^2.2.1"
+  },
+  "scripts": {
+    "test": "npm run unit-test && npm run it-test",
+    "unit-test": "npm run clean && ./node_modules/mocha/bin/mocha --require ./node_modules/ts-node/register ./typescript/test/unit/**/*.ts",
+    "it-test": "npm run clean && ./node_modules/mocha/bin/mocha --timeout 0 --require ./node_modules/ts-node/register ./typescript/test/it/**/*.ts",
+    "swagger-gen": "./node_modules/tsoa/dist/cli.js swagger",
+    "route-gen": "./node_modules/tsoa/dist/cli.js routes",
+    "lint": "./node_modules/tslint/bin/tslint --project ./typescript/tslint.json",
+    "clean": "rm -rf bin && find ./typescript -type f -name \"*.js\" -delete",
+    "clean-all": "npm run clean && rm -rf ./typescript/src/routes.ts",
+    "build": "npm run clean-all && npm run lint && npm run route-gen && ./node_modules/typescript/bin/tsc --p ./tsconfig.json",
+    "dev-server": "npm run build && ./node_modules/nodemon/bin/nodemon.js ./bin/src/main.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

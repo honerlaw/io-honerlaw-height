@@ -1,0 +1,15 @@
+{
+  "swagger": {
+    "outputDirectory": "./swagger",
+    "entryFile": "./typescript/src/main.ts",
+    "host": "localhost:3000",
+    "basePath": "/api/v1"
+  },
+  "routes": {
+    "basePath": "/api/v1",
+    "authenticationModule": "./security",
+    "iocModule": "./util/ioc",
+    "entryFile": "./typescript/src/main.ts",
+    "routesDir": "./typescript/src"
+  }
+}

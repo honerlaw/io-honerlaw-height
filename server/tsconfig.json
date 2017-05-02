@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "allowJs": true,
+    "jsx": "react",
+    "outDir": "./bin",
+    "rootDir": "./typescript",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "lib": ["es6", "dom"],
+    "types": ["mocha", "reflect-metadata"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "filesGlob": [
+    "typescript/src/**/*.ts",
+    "typescript/src/**/*.tsx"
+  ],
+  "exclude": [
+    "bin",
+    "index.ios.js",
+    "index.android.js",
+    "node_modules"
+  ],
+  "compileOnSave": true
+}
